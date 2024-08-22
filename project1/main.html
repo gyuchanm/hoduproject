@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HODU 페이지</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: pretendard, sans-serif;
+        font-style: normal;
+        font-weight: 100;
+    }
+
+    html, body {
+        height: 100%;
+        width: 1920px;
+    }
+
+    .section1{
+        width: 1920px;
+        height: 900px;
+        padding-left: 320px;
+        padding-right: 320px;
+        background-color: #F2E9D8;
+        overflow: hidden;
+    }
+
+    .headersection1{
+        height: 102px;
+        display: flex;
+        align-items: center;
+    }
+
+    .headersection2{
+        height: 798px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+
+    .logo{
+        cursor: pointer;
+    }
+
+    .header-ul{
+        margin-left: 756px;
+    }
+
+    nav ul li {
+        display: inline-block;
+        font-size: 16px;
+        margin-right: 20px;
+        cursor: pointer;
+    }
+
+    .download{
+        background-color: #D97652;
+        width: 140px;
+        height: 50px;
+        border-radius: 25px;
+        font-size: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        color: white;
+    }
+
+    .line1{
+        font-size: 48px;
+        font-weight: bold;
+        line-height: 60px;
+    }
+    .line2{
+        font-size: 16px;
+        line-height: 20px;
+        margin-top: 20px;
+    }
+
+    .headerimg{
+        width: 415px;
+        height: 766px;
+        background-repeat: no-repeat;
+        margin-top: 30px;
+    }
+
+    .flexfunc{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+
+
+/*    */
+    .mainimg1{
+        width: 660px;
+        height: 390px;
+        margin-top: 80px;
+        border-radius: 30px;
+        box-shadow: 10px 10px 30px 0 rgba(0, 0, 0, 0.25);
+    }
+
+    .mainsection, .imgsec{
+        padding-left: 320px;
+        padding-right: 320px;
+        width: 1920px;
+    }
+
+    .mainflex{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .flexco{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        margin-left: 110px;
+        width: 510px;
+        text-align: left;
+    }
+
+    .maintext1{
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 45px;
+        margin-top: 92px;
+        margin-bottom: 30px;
+    }
+    .maintext2{
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .maintext3{
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 60px;
+        text-align: center;
+        color: #D97652;
+        margin-top: 120px;
+        margin-bottom: 40px;
+    }
+    .maintext4{
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+    }
+    .orange{
+        color: #D97652;
+    }
+
+    .imgsection1{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 88px;
+        margin-bottom: 72px;
+    }
+    .imgsection2{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 100px;
+    }
+
+    .sec1img1, .sec1img2, .sec1img3, .sec2img1, .sec2img2, .sec2img3{
+        border-radius: 30px;
+        width: 378px;
+        height: 378px;
+        box-shadow: 10px 10px 30px 0 rgba(0, 0, 0, 0.25);
+    }
+
+
+    .cehodu{
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 30px;
+        text-align: center;
+        margin-bottom: 28px;
+    }
+
+    .subbox{
+        width: 1280px;
+        height: 200px;
+        border-radius: 30px;
+        background-color: #263140;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        bottom: 100px;
+    }
+    .subtext{
+        color: white;
+        margin-left: 58px;
+        text-align: left;
+    }
+    .subbtn{
+        width: 530px;
+        height: 60px;
+        border-radius: 60px;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        margin-right: 58px;
+    }
+
+    .imgdiv{
+        width: 1920px;
+        height: 340px;
+        display: flex;
+        justify-content:center;
+        background-image: url("imgsrc/img_5.png");
+        background-size: cover; /* 이미지가 요소를 가득 채우도록 */
+        background-position: center; /* 이미지가 가운데 정렬되도록 */
+        background-repeat: no-repeat; /* 이미지가 반복되지 않도록 */
+        margin-top: 181px;
+    }
+
+
+    .footsection{
+        margin-left: 320px;
+        margin-right: 320px;
+    }
+    .cir1, .cir2, .cir3, .cir4{
+        width: 42px;
+        height: 42px;
+        background-color: #f29d52;
+        border-radius: 21px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .fimg1, .fimg2, .fimg3, .fimg4{
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+    }
+    .fmid{
+        display: flex;
+        align-items: center;
+        width: 1920px;
+        height: 160px;
+    }
+
+</style>
+<body>
+    <div>
+<!--        header용 div태그-->
+        <div class="section1">
+            <header class="headersection1">
+                <img src="imgsrc/Group.png" class="logo" alt="logo">
+                <nav class="header-ul">
+                    <ul>
+                        <li>Home</li>
+                        <li>About</li>
+                        <li>Support</li>
+                    </ul>
+                </nav>
+                <button class="download">
+                    Download
+                </button>
+            </header>
+            <!--        노란색 배경 부분용 div태그-->
+            <div class="headersection2">
+                <div class="flexfunc">
+                    <p class="line1">
+                        Lorem Ipsum is simply
+                        <br/>
+                        dummy text of the printing and
+                    </p>
+                    <br/>
+                    <p class="line2">
+                        Lorem Ipsum is simply dummy text of the printing and
+                        <br/>
+                        typesetting industry.
+                        <br/>
+                        Lorem Ipsum has been the industry's standard dummy text
+                        <br/>
+                        ever since the 1500s, when an unknown
+                    </p>
+                    <br/>
+                    <button class="download">
+                        Download
+                    </button>
+                </div>
+                <div class="flexfunc">
+                    <img src="imgsrc/img_cat_png.png" class="headerimg" alt="catbox">
+                </div>
+            </div>
+        </div>
+
+        <!--    하얀색 배경 부분 div태그-->
+        <div class="mainsection">
+            <div class="mainflex">
+                <img src="imgsrc/img_4.png" class="mainimg1" alt="catlay">
+                <div class="flexco">
+                    <p class="maintext1">
+                        Lorem Ipsum is simply dummy text of the printing and dummy text
+                    </p>
+                    <p class="maintext2">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    </p>
+                </div>
+            </div>
+            <div>
+                <p class="maintext3">
+                    dummy text of the printing and dummy
+                </p>
+                <p class="maintext4">
+                    Lorem Ipsum is simply <span class="orange">dummy text</span> of the printing and typesetting industry.
+                    <br/>
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                </p>
+            </div>
+        </div>
+
+<!--        사진 grid-->
+        <div class="imgsec">
+            <div class="imgsection1">
+                <img src="imgsrc/img_1.png" class="sec1img1" alt="cat1">
+                <img src="imgsrc/img_2.png" class="sec1img2" alt="cat2">
+                <img src="imgsrc/img_3.png" class="sec1img3" alt="cat3">
+            </div>
+            <div class="imgsection2">
+                <img src="imgsrc/img_1%20(1).png" class="sec2img1" alt="cat4">
+                <img src="imgsrc/img_2%20(1).png" class="sec2img2" alt="cat5">
+                <img src="imgsrc/img_3%20(1).png" class="sec2img3" alt="cat6">
+            </div>
+            <div class="showmore">
+                <p class="cehodu">Continue exploring HODU</p>
+                <div style="text-align: center">
+                    <a href="#" style="display: inline-block; padding: 15px 29px;
+            background-color: #D97652; border-radius: 40px; margin-bottom: 80px">show more</a>
+                </div>
+                <p style="width: 1280px; height: 1px; background-color: #C4C4C4; margin-bottom: 68px"></p>
+            </div>
+            <div>
+                <p style="font-weight: 700; font-size: 36px; line-height: 45px; margin-bottom: 20px">
+                    Where you'll be
+                </p>
+                <p style="font-weight: 500; font-size: 16px; line-height: 20px; color: #606367; margin-bottom: 48px">
+                    330, Cheomdan-ro, Jeju-si, Jeju-do, Republic of Korea
+                </p>
+                <img src="imgsrc/map.png" style="width: 1280px; height: 520px; border-radius: 12px" alt="map">
+            </div>
+        </div>
+
+<!--        구독div태그-->
+        <div>
+            <div style="text-align: center">
+                <div class="imgdiv">
+                    <div class="subbox">
+                        <div class="subtext">
+                            <p style="font-weight: 700; font-size: 36px; line-height: 45px; margin-bottom: 18px">
+                                Subscribe to our Blog post
+                            </p>
+                            <p style="font-weight: 400; font-size: 14px; line-height: 18px">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                <br/>
+                                Lorem Ipsum has been the industry's standard dummy text
+                            </p>
+                        </div>
+                        <div class="subbtn">
+                            <div style="display: flex; align-items: center;">
+                                <img src="imgsrc/mail.svg" style="width: 24px; height: 24px; margin-left: 28px; margin-right: 16px" alt="mail">
+                                <label>
+                                    <input type="text" placeholder="Enter your e-mail address" style="color: #767676; border: none; outline: none;">
+                                </label>
+                                <button style="background-color: #D97652; border-radius: 40px; width: 135px; height: 50px; margin-left: 137px">
+                                    Subscribe
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--    footer용 div태그-->
+        <div class="footsection">
+            <footer class="fmid">
+                <img src="imgsrc/Group.png" style="width: 226px; height: 70px; margin-right: 826px" alt="logo">
+                <div style="width: 228px; height: 42px; display: flex; justify-content: space-between">
+                    <div class="cir1">
+                        <img src="imgsrc/Vector.png" class="fimg1" alt="blog">
+                    </div>
+                    <div class="cir2">
+                        <img src="imgsrc/instagram.png" class="fimg2" alt="insta">
+                    </div>
+                    <div class="cir3">
+                        <img src="imgsrc/facebook.png" class="fimg3" alt="facebook">
+                    </div>
+                    <div class="cir4">
+                        <img src="imgsrc/youtube.png" class="fimg4" alt="youtube1">
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+<!--        모달창-->
+
+
+
+    </div>
+</body>
+</html>
