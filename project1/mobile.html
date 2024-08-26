@@ -89,8 +89,82 @@
     }
 
 
-</style>
 
+
+    .cir1, .cir2, .cir3, .cir4{
+        width: 32px;
+        height: 32px;
+        background-color: #f29d52;
+        border-radius: 21px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .fimg1, .fimg2, .fimg3, .fimg4{
+        width: 18.29px;
+        height: 18.29px;
+        object-fit: contain;
+    }
+
+
+    .subs{
+        position: relative;
+        z-index: 2;
+        width: 326px;
+        height: 348px;
+        border-radius: 18px;
+        background-color: #263140;
+        top: 68px;
+    }
+    .lastcat{
+        position: relative;
+        width: 390px;
+        height: 240px;
+        z-index: 1;
+        right: 32px;
+        margin-bottom: 30px;
+    }
+
+    .emailspace{
+        width: 262px;
+        height: 40px;
+        border-radius: 60px;
+        background-color: white;
+        display: flex;
+        align-items: center;
+    }
+
+    .subbtn{
+        width: 115px;
+        height: 40px;
+        border-radius: 40px;
+        padding: 11px 24px 11px 24px;
+        gap: 10px;
+        background-color: #D97652;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 18px;
+        text-align: center;
+        color: white;
+        cursor: pointer;
+        border: none;
+        outline: none;
+    }
+
+    .footli{
+        width: 84px;
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: right;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+        color: #767676;
+    }
+</style>
 <body>
     <div style="width:390px; margin : 0 auto">
         <div class="firstsection">
@@ -184,17 +258,85 @@
                 </div>
                 <p style="width: 326px; height: 1px; background-color: #C4C4C4; margin-top: 60px; margin-bottom: 40px"></p>
                 <div>
-                    <p>
+                    <p style="font-weight: 700; font-size: 24px; line-height: 30px">
                         Where you'll be
                     </p>
-                    <p>
+                    <p style="font-weight: 500; font-size: 16px; line-height: 20px; color: #606367; margin-bottom: 28px">
                         330, Cheomdan-ro, Jeju-si, Jeju-do,
                         <br/>
                         Republic of Korea
                     </p>
                     <img src="imgsrc/map.png" alt="map" style="width: 326px; height: 132px; border-radius: 12px">
                 </div>
-
+                <div>
+                    <div class="subs">
+                        <div style="padding-left: 32px; padding-right: 32px; padding-top: 36px">
+                            <p style="font-weight: 700; font-size: 24px; line-height: 30px; color: white; margin-top: 0">
+                                Subscribe to our
+                                <br/>
+                                Blog post
+                            </p>
+                            <p style="font-weight: 400; font-size: 13px; line-height: 18px; color: #F2E9D8; margin-bottom: 30px">
+                                Lorem Ipsum is simply dummy text of the
+                                <br/>
+                                printing and typesetting industry.
+                                <br/>
+                                Lorem Ipsum has been the industry's
+                                <br/>
+                                standard dummy text
+                            </p>
+                            <div style="margin-bottom: 20px">
+                                <div class="emailspace">
+                                    <img src="imgsrc/mail.svg" alt="mail" style="width: 18px; height: 18px; margin-left: 16px; margin-right: 14px">
+                                    <label>
+                                        <input type="text" placeholder="Enter your e-mail address" style="font-weight: 400; font-size: 12px; line-height: 16px; color: #767676;border: none; outline: none;">
+                                    </label>
+                                </div>
+                            </div>
+                            <div style="text-align: right">
+                                <button class="subbtn">
+                                    Subscribe
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-left: 0; margin-right: 0">
+                        <img src="imgsrc/img_5.png" alt="cat" class="lastcat">
+                    </div>
+                </div>
+                <div>
+                    <footer style="display: flex; justify-content: center">
+                        <div>
+                            <div>
+                                <img src="imgsrc/Group.png" alt="logo" style="width: 112px; height: 34px; margin-bottom: 58px">
+                            </div>
+                            <div style="width: 176px; height: 32px; display: flex; justify-content: space-between; margin-bottom: 24px">
+                                <div class="cir1">
+                                    <img src="imgsrc/Vector.png" class="fimg1" alt="blog">
+                                </div>
+                                <div class="cir2">
+                                    <img src="imgsrc/instagram.png" class="fimg2" alt="insta">
+                                </div>
+                                <div class="cir3">
+                                    <img src="imgsrc/facebook.png" class="fimg3" alt="facebook">
+                                </div>
+                                <div class="cir4">
+                                    <img src="imgsrc/youtube.png" class="fimg4" alt="youtube1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footli">
+                            <nav>
+                                <ul style="list-style-type: none;">
+                                    <li>About</li>
+                                    <li>Blog</li>
+                                    <li>Support</li>
+                                    <li>Terms of Use</li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </footer>
+                </div>
             </div>
         </div>
     </div>

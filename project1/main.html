@@ -260,6 +260,55 @@
         height: 160px;
     }
 
+
+
+    /* 모달창 배경 어둡게 하는 스타일 */
+    .modal-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* 모달창 스타일 */
+    .modal-content {
+        background-image: url("imgsrc/backcon.png");
+        background-size: contain;
+        width: 600px;
+        height: 400px;
+        border-radius: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.20);
+        z-index: 1001;
+        text-align: center;
+    }
+
+    /* 모달창 버튼 스타일 */
+    .modal-close-btn {
+        width: 183px;
+        height: 50px;
+        border-radius: 40px;
+        gap: 10px;
+        padding: 15px 29px 15px 29px;
+        margin-top: 38px;
+        background-color: #D97652;
+        border: none;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 20px;
+        text-align: center;
+        cursor: pointer;
+        color: white;
+    }
+
 </style>
 <body>
     <div>
@@ -382,11 +431,13 @@
                             <div style="display: flex; align-items: center;">
                                 <img src="imgsrc/mail.svg" style="width: 24px; height: 24px; margin-left: 28px; margin-right: 16px" alt="mail">
                                 <label>
-                                    <input type="text" placeholder="Enter your e-mail address" style="color: #767676; border: none; outline: none;">
+                                    <input type="text" placeholder="Enter your e-mail address" style="color: #767676; border: none; outline: none; font-size: 16px; font-weight: 400; line-height: 20px">
                                 </label>
-                                <button style="background-color: #D97652; border-radius: 40px; width: 135px; height: 50px; margin-left: 137px">
-                                    Subscribe
-                                </button>
+                                <div style="margin-left: 100px">
+                                    <button class="download" style="font-weight: 700; font-size: 16px; line-height: 20px">
+                                        Subscribe
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -417,7 +468,38 @@
         </div>
 
 <!--        모달창-->
+        <div class="modal-overlay" id="modal">
+            <div class="modal-content">
+                <img src="imgsrc/modalcat.png" alt="modalcat" style="width: 110px; height: 112px; margin-top: 60px">
+                <p style="margin-top: 24px; font-weight: 700; font-size: 36px; line-height: 45px; color: #D97652; text-align: center">
+                    Thank you!
+                </p>
+                <p style="margin-top: 12px; font-weight: 400; font-size: 14px; line-height: 18px; text-align: center; color: black">
+                    Lorem Ipsum is simply dummy text of the printing industry.
+                </p>
+                <button class="modal-close-btn" id="close-modal">OK! I Love HODU!</button>
+            </div>
+        </div>
 
+        <!-- 기존의 스크립트 추가 -->
+        <script>
+            // Subscribe 버튼 클릭 이벤트 처리
+            document.querySelector('.subbtn button').addEventListener('click', function() {
+                document.getElementById('modal').style.display = 'flex';
+            });
+
+            // 모달 닫기 버튼 클릭 이벤트 처리
+            document.getElementById('close-modal').addEventListener('click', function() {
+                document.getElementById('modal').style.display = 'none';
+            });
+
+            // 모달 외부 클릭 시 모달 닫기
+            document.querySelector('.modal-overlay').addEventListener('click', function(event) {
+                if (event.target === this) {
+                    this.style.display = 'none';
+                }
+            });
+        </script>
 
 
     </div>
