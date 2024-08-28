@@ -164,6 +164,54 @@
         line-height: 18px;
         color: #767676;
     }
+
+    /* 모달창 배경 어둡게 하는 스타일 */
+    .modal-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* 모달창 스타일 */
+    .modal-content {
+        background-image: url("imgsrc/backcon.png");
+        background-size: contain;
+        width: 300px;
+        height: 300px;
+        border-radius: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.20);
+        z-index: 1001;
+        text-align: center;
+    }
+
+    /* 모달창 버튼 스타일 */
+    .modal-close-btn {
+        width: 158px;
+        height: 40px;
+        border-radius: 40px;
+        gap: 10px;
+        padding: 11px 24px 11px 24px;
+        margin-top: 14px;
+        background-color: #D97652;
+        border: none;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 18px;
+        text-align: center;
+        cursor: pointer;
+        color: white;
+    }
+
 </style>
 <body>
     <div style="width:390px; margin : 0 auto">
@@ -289,12 +337,12 @@
                                 <div class="emailspace">
                                     <img src="imgsrc/mail.svg" alt="mail" style="width: 18px; height: 18px; margin-left: 16px; margin-right: 14px">
                                     <label>
-                                        <input type="text" placeholder="Enter your e-mail address" style="font-weight: 400; font-size: 12px; line-height: 16px; color: #767676;border: none; outline: none;">
+                                        <input id="email-input" type="text" placeholder="Enter your e-mail address" style="font-weight: 400; font-size: 12px; line-height: 16px; color: #767676;border: none; outline: none;">
                                     </label>
                                 </div>
                             </div>
                             <div style="text-align: right">
-                                <button class="subbtn">
+                                <button id="subscribe-btn" class="subbtn">
                                     Subscribe
                                 </button>
                             </div>
@@ -337,9 +385,86 @@
                         </div>
                     </footer>
                 </div>
+
+                <div id="side-menu" style="width: 289px; height: 820px; background-color: #263140; position: fixed; top: 0; right: -289px; transition: right 0.3s;">
+                    <div>
+                        <img id="close-menu" src="imgsrc/arrow-right.svg" alt="arrowright" style="margin-left: 20px; margin-top: 22px; cursor: pointer;">
+                    </div>
+                    <div>
+                        <ul style="list-style-type: none;margin-left: 10px; margin-top: 66px">
+                            <li style="font-weight: 700; font-size: 14px; line-height: 20px; color: white; margin-bottom: 30px">Home</li>
+                            <li style="font-weight: 700; font-size: 14px; line-height: 20px; color: white; margin-bottom: 30px">About</li>
+                            <li style="font-weight: 700; font-size: 14px; line-height: 20px; color: white">Support</li>
+                        </ul>
+                    </div>
+                    <div style="margin-left: 40px; margin-top: 50px">
+                        <button class="download">
+                            Download
+                        </button>
+                    </div>
+                </div>
+                <!--        모달창-->
+                <div class="modal-overlay" id="modal">
+                    <div class="modal-content">
+                        <img src="imgsrc/modalcat.png" alt="modalcat" style="width: 60px; height: 62px; margin-top: 40px">
+                        <p style="margin-top: 12px; font-weight: 700; font-size: 24px; line-height: 30px; color: #D97652; text-align: center">
+                            Thank you!
+                        </p>
+                        <p style="margin-top: 5px; font-weight: 400; font-size: 14px; line-height: 18px; text-align: center; color: black">
+                            Lorem Ipsum is simply dummy <br/> text of the printing industry.
+                        </p>
+                        <button class="modal-close-btn" id="close-modal">OK! I Love HODU!</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </body>
+<script>
+    document.querySelector('.menu-button').addEventListener('click', function() {
+        document.getElementById('side-menu').style.right = '0';
+    });
+
+    document.getElementById('close-menu').addEventListener('click', function() {
+        document.getElementById('side-menu').style.right = '-289px';
+    });
+
+    // 구독 버튼 이벤트 리스너
+    document.getElementById('subscribe-btn').addEventListener('click', function(event) {
+        validateEmail(event);
+    });
+
+    // 모달 닫기 버튼 클릭 이벤트 처리
+    document.getElementById('close-modal').addEventListener('click', function() {
+        document.getElementById('modal').style.display = 'none';
+    });
+
+    // 모달 외부 클릭 시 모달 닫기
+    document.querySelector('.modal-overlay').addEventListener('click', function(event) {
+        if (event.target === this) {
+            this.style.display = 'none';
+        }
+    });
+
+    function emailCheck(email_address){
+        var email_regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
+        return email_regex.test(email_address);
+    }
+
+    function validateEmail(event) {
+        var emailInput = document.getElementById('email-input');
+        var email = emailInput.value;
+
+        if (emailCheck(email)) {
+            // 이메일이 유효한 경우 모달 창을 표시
+            document.getElementById('modal').style.display = 'flex';
+        } else {
+            // 이메일이 유효하지 않은 경우 알림 메시지 표시
+            alert('유효하지 않은 이메일 주소입니다. 이메일을 다시 입력해주세요.');
+            event.preventDefault();
+        }
+    }
+</script>
+
 
 </html>
