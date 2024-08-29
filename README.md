@@ -5,7 +5,6 @@
 
 #2.개발 환경 & 배포URL
 github : https://github.com/gyuchanm/hoduproject/tree/master/project1
-
 PC: https://gyuchanm.github.io/hoduproject/project1/main.html
 MOBILE: https://gyuchanm.github.io/hoduproject/project1/mobile.html
 
