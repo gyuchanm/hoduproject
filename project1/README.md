@@ -1,11 +1,17 @@
-1.목표
+#1.목표
 요구사항 명세서를 고려하여 피그마에 있는 페이지 똑같이 구현하기
 
-2.배포URL
+***
+
+#2.개발 환경 & 배포URL
+github : https://github.com/gyuchanm/hoduproject/tree/master/project1
+
 PC: https://gyuchanm.github.io/hoduproject/project1/main.html
 MOBILE: https://gyuchanm.github.io/hoduproject/project1/mobile.html
 
-3.요구사항 명세
+***
+
+#3.요구사항 명세
 https://www.figma.com/design/s9RCnA6dSi3QHHeMDFHKE6/EST-%EC%98%A4%EB%A5%B4%EB%AF%B8(BE)_HTML%2FCSS%2FJS?node-id=104924-739&t=vTP4Qtlh1whYEWZy-0
 
 1. 피그마를 참고하여 페이지 구현을 합니다.
@@ -20,8 +26,9 @@ https://www.figma.com/design/s9RCnA6dSi3QHHeMDFHKE6/EST-%EC%98%A4%EB%A5%B4%EB%AF
     2. 이메일 유효성 검사를 진행해야 합니다. (값이 들어가지 않거나 이메일 형식이 유효하지 않으면 alert 창으로 경고 문구가 떠야합니다.)
     3. 이메일이 잘 입력되었다면 모달창이 뜹니다. 이때 모달창의 `OK! I love HODU` 버튼을 클릭하면 form이 제출되고 모달창이 닫힙니다.
 
+***
 
-4.프로젝트 구조와 개발 일정
+#4.프로젝트 구조와 개발 일정
    -1일차
       PC HTML구조 잡기, 헤더 만들기
    -2일차
@@ -41,18 +48,22 @@ https://www.figma.com/design/s9RCnA6dSi3QHHeMDFHKE6/EST-%EC%98%A4%EB%A5%B4%EB%AF
    -9일차
       발표
 
-5.에러와 에러 해결 / 어려웠던 점
+***
+
+#5.에러와 에러 해결 / 어려웠던 점
    1)앱솔 사용하지 않고 이미지 배치하기
-   2)clsss나 id 이름 보기 쉽게 정하는 것?
+   2)clsss나 id 이름 정하는 방법
    3)구독 버튼 배치하는 법 / pc와 모바일을 각각 다른 방식으로 만듦
    4)모바일 메뉴 창 구현하기(미해결?)
 
+***
 
-6.개발하며 느낀 점
-
-HTML/CSS/JS를 이용해서 웹페이지를 만드는 것은 거의 처음이라서
-여기저기 보완할 점이 여전히 많이 보인다.
-그래도 막연했던 프론트를 시도해볼 수 있어서 좋았고, 
-프론트는 적성에 맞지 않겠다라는 선입견과 달리
-앞으로도 꾸준히 공부한다면 잘 하게 될 수 있겠다는 생각이 들었다. 
+#6.개발하며 느낀 점
+처음 진행한 프로젝트라 부족한 점이 많이 보였음.
+1)태그를 적절히 사용하지 못했다.
+2)class와 id도 잘 활용하지 못한 것 같다.
+3)css와js파일을 분리하지 않아 가독성이 떨어진다.
+그래도 프론트 분야는 잘 맞지 않을 줄 알았는데,
+기대했던 것보다는 나은 결과물을 낼 수 있어서 좋았다.
+자바스크립트의 경우에는 공부가 더 필요하다고 느꼈다.
 
